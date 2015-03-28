@@ -9,10 +9,22 @@
 #import "DYViewController.h"
 
 @interface DYViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *num1;
+@property (weak, nonatomic) IBOutlet UITextField *num2;
+@property (weak, nonatomic) IBOutlet UILabel *result;
 
 @end
 
 @implementation DYViewController
+
+- (IBAction)compute:(id)sender {
+    NSString *i1=self.num1.text;
+    NSString *i2=self.num2.text;
+    int result=    i1.intValue+i2.intValue;
+    self.result.text=[NSString stringWithFormat:@"%d",result];
+    
+    [self.view endEditing:YES];
+}
 
 - (void)viewDidLoad
 {
